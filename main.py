@@ -1,22 +1,20 @@
 import tkinter as tk
-from comparar import Comparar  # Importando a classe Comparar
-from calculo import calculo_custos  # Função ou classe de cálculo de custos
-from alertas import alertas_e_sugestoes  # Função ou classe de alertas
-from educacao import informacoes_educacao  # Função ou classe de educação
-from impacto import ImpactoCicloVida  # Função ou classe de análise de impacto
+from comparar import Comparar
+from calculo import calculo_custos
+from alertas import alertas_e_sugestoes
+from educacao import informacoes_educacao
+from impacto import ImpactoCicloVida
 
 class GerenciadorEnergia:
     def __init__(self, master):
         self.master = master
-        self.master.title("Adipia")  # Título da janela agora é "Adipia"
+        self.master.title("Adipia")
         self.master.geometry("1920x1080")
         self.master.configure(bg="#e9f7ef")
 
-        # Subtítulo modificado para "🌱 Gerenciador de Energia 🌱"
         titulo = tk.Label(master, text="Adipia", font=("Arial", 30, "bold"), bg="#e9f7ef", fg="#2e7d32")
         titulo.pack(pady=20)
 
-        # Agora, "🌱 Gerenciador de Energia 🌱" será o subtítulo e estará logo abaixo do título
         subtitulo = tk.Label(master, text="🌱 Gerenciador de Energia 🌱", font=("Arial", 20, "bold"), bg="#e9f7ef", fg="#388e3c")
         subtitulo.pack(pady=10)
 
@@ -37,10 +35,10 @@ class GerenciadorEnergia:
         rodape.pack(side="bottom", pady=10)
 
     def abrir_comparar(self):
-        nova_janela = tk.Toplevel(self.master)  # Cria a nova janela
-        nova_janela.title("Comparar Consumo")  # Define o título da nova janela
-        nova_janela.geometry("600x400")  # Define o tamanho da nova janela
-        Comparar(nova_janela)  # Passa a nova janela para a classe Comparar
+        nova_janela = tk.Toplevel(self.master)
+        nova_janela.title("Comparar Consumo")
+        nova_janela.geometry("600x400")
+        Comparar(nova_janela)
         
     def abrir_calculo(self):
         calculo_custos(self.master)
